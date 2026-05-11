@@ -239,10 +239,10 @@
 
         if (dropdown) dropdown.style.display = originalDisplay;
 
-        const dataUrl = canvas.toDataURL("image/png");
+        const dataUrl = canvas.toDataURL("file/pdf");
         const link = document.createElement("a");
         link.href = dataUrl;
-        link.download = "hac-certificate.png";
+        link.download = "hac-certificate.pdf";
         document.body.appendChild(link);
         link.click();
         document.body.removeChild(link);
