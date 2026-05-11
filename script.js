@@ -230,18 +230,18 @@
         if (dropdown) dropdown.style.visibility = "hidden";
 
         const opt = {
-          margin: [20, 0, 20, 0], // Top, Left, Bottom, Right margins
+          margin: [10, 0, 0, 0], // Top, Left, Bottom, Right margins
           filename: "hac-certificate.pdf",
           image: { type: "jpeg", quality: 0.98 },
           html2canvas: {
-            scale: 3,
+            scale: 2,
             useCORS: true,
             backgroundColor: "#ffffff",
           },
           jsPDF: {
             unit: "mm",
             format: "a4",
-            orientation: "portrait",
+            orientation: "landscape",
           },
         };
         await document.fonts.ready;
