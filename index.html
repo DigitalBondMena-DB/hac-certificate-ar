@@ -15,8 +15,17 @@
       href="https://fonts.googleapis.com/css2?family=Alexandria:wght@100..900&display=swap"
       rel="stylesheet"
     />
-
     <link href="./css/style.css" rel="stylesheet" />
+    <style>
+      #print-certificate * {
+        letter-spacing: normal !important;
+        word-spacing: normal !important;
+      }
+      #print-certificate span {
+        display: inline-block;
+        white-space: pre;
+      }
+    </style>
   </head>
   <body
     class="bg-white text-black antialiased h-screen flex items-center justify-center"
@@ -49,34 +58,47 @@
               id="certificate-title"
               class="font-heading text-center text-4xl sm:text-5xl leading-tight text-black lg:my-10 my-5"
             >
-              شهادة شكر وتقدير
+              <span>شهادة</span> <span>شكر</span> <span>وتقدير</span>
             </h1>
             <p class="text-center lg:my-10 my-5 text-black/65">
-              تتقدم *شركة هاك لمستحضرات التجميل* بجزيل الشكر والعرفان إلى
-              الدكتور
+              <span>تتقدم</span> <span>شركة</span> <span>هاك</span>
+              <span>لمستحضرات</span> <span>التجميل</span> <span>بجزيل</span>
+              <span>الشكر</span> <span>والعرفان</span> <span>إلى</span>
+              <span>الدكتور</span>
             </p>
             <p
               class="font-heading text-center text-4xl text-luxury lg:my-10 my-5"
             >
-              محمد علي جاد
+              <span>محمد</span> <span>علي</span> <span>جاد</span>
             </p>
             <p
               class="text-sm sm:text-base text-center text-black/70 leading-relaxed max-w-2xl mx-auto lg:my-10 my-5"
             >
-              وذلك تقديراً لجهوده المتميزة، ومساهمته الفعالة في نجاح مسيرة
-              الشركة وتطوير أعمالها.
+              <span>وذلك</span> <span>تقديراً</span> <span>لجهوده</span>
+              <span>المتميزة،</span> <span>ومساهمته</span> <span>الفعالة</span>
+              <span>في</span> <span>نجاح</span> <span>مسيرة</span>
+              <span>الشركة</span> <span>وتطوير</span> <span>.أعمالها</span>
             </p>
 
             <dl
               class="flex flex-wrap justify-center gap-x-14 gap-y-5 lg:my-10 my-5 text-sm text-black/80"
             >
               <div class="text-center">
-                <dt class="font-semibold text-black">إدارة الشركة</dt>
-                <dd class="mt-1">هاك لمسحضرات التجميل</dd>
+                <dt class="font-semibold text-black">
+                  <span>إدارة</span> <span>الشركة</span>
+                </dt>
+                <dd class="mt-1">
+                  <span>هاك</span> <span>لمسحضرات</span> <span>التجميل</span>
+                </dd>
               </div>
               <div class="text-center">
-                <dt class="font-semibold text-black">تحريراً في</dt>
-                <dd class="mt-1">٢٤ ذو القعدة ١٤٤٧ هـ</dd>
+                <dt class="font-semibold text-black">
+                  <span>تحريراً</span> <span>في</span>
+                </dt>
+                <dd class="mt-1">
+                  <span>٢٤</span> <span>ذو</span> <span>القعدة</span>
+                  <span>١٤٤٧</span> <span>هـ</span>
+                </dd>
               </div>
             </dl>
 
@@ -111,7 +133,7 @@
                     role="menu"
                     aria-label="Share options"
                   >
-                    <div class="flex  gap-2">
+                    <div class="flex gap-2">
                       <button
                         class="share-icon"
                         data-share="linkedin"
@@ -237,7 +259,7 @@
                   <p
                     class="text-sm text-black flex items-center gap-2 font-semibold"
                   >
-                    مشغل بواسطة
+                    <span>مشغل</span> <span>بواسطة</span>
                     <a
                       href="https://test.techhouseksa.com"
                       target="_blank"
