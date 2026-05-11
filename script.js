@@ -227,25 +227,36 @@
 
         // Hide share dropdown during capture
         const dropdown = elements.dropdown;
-        const originalDisplay = dropdown ? dropdown.style.display : "";
-        if (dropdown) dropdown.style.display = "none";
+        if (dropdown) dropdown.style.visibility = "hidden";
 
-        const canvas = await html2canvas(certificate, {
-          scale: 2,
-          useCORS: true,
-          backgroundColor: "#ffffff",
-          logging: false,
-        });
+        const opt = {
+          margin: [20, 0, 20, 0], // Top, Left, Bottom, Right margins
+          filename: "hac-certificate.pdf",
+          image: { type: "jpeg", quality: 0.98 },
+          html2canvas: { 
+            scale: 3, 
+            useCORS: true, 
+            letterRendering: true,
+            backgroundColor: "#ffffff"
+          },
+          jsPDF: { 
+            unit: "mm", 
+            format: "a4", 
+            orientation: "portrait" 
+          }
+        };
 
-        if (dropdown) dropdown.style.display = originalDisplay;
+        // Generate PDF
+        await html2pdf().set(opt).from(certificate).toPdf().get('pdf').then((pdf) => {
+          const totalPages = pdf.internal.getNumberOfPages();
+          for (let i = 1; i <= totalPages; i++) {
+            pdf.setPage(i);
+            // This is a common trick to ensure centering if needed, 
+            // but html2pdf handles auto-scaling well with margins.
+          }
+        }).save();
 
-        const dataUrl = canvas.toDataURL("file/pdf");
-        const link = document.createElement("a");
-        link.href = dataUrl;
-        link.download = "hac-certificate.pdf";
-        document.body.appendChild(link);
-        link.click();
-        document.body.removeChild(link);
+        if (dropdown) dropdown.style.visibility = "visible";
 
         ui.setStatus("تم تحميل الشهادة بنجاح", "success");
         ui.showToast("تم تحميل الشهادة بنجاح", "success");
